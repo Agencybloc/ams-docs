@@ -1,0 +1,49 @@
+version: 1
+
+business_areas:
+  commissions:
+    owners: [commissions-team]
+    code_paths:
+      - repo: MonolithCommissions
+        globs: ['src/Commissions/**/*.cs']
+      - repo: microservice-rates-engine
+        globs: ['src/**/*.cs']
+        exclude: ['src/**/Tests/**']
+      - repo: microservice-billing
+        globs: ['src/Billing/Commission*.cs']
+    docs_paths:
+      - docs/explanation/commissions/
+    related_flags:
+      - new-commission-splits-v2
+      - commission-engine-v3-rollout
+    slack_channel: '#commissions-eng'
+    jira_project: COMM
+
+  policies:
+    owners: [policies-team]
+    code_paths:
+      - repo: MonolithPolicies
+        globs: ['src/Policies/**/*.cs']
+      - repo: microservice-policy-events
+        globs: ['src/**/*.cs']
+        exclude: ['src/**/Tests/**']
+    docs_paths:
+      - docs/explanation/policies/
+    related_flags: []
+    slack_channel: '#policies-eng'
+    jira_project: POL
+
+  compliance:
+    owners: [compliance-team, legal]
+    code_paths:
+      - repo: MonolithCompliance
+        globs: ['src/Compliance/**/*.cs']
+      - repo: microservice-cms-rules
+        globs: ['src/**/*.cs']
+        exclude: ['src/**/Tests/**']
+    docs_paths:
+      - docs/explanation/compliance/
+    related_flags:
+      - cms-compliance-v2
+    slack_channel: '#compliance-eng'
+    jira_project: COMP

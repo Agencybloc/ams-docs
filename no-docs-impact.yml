@@ -1,0 +1,15 @@
+version: 1
+
+# ConfigCat flags listed here are explicitly NOT documented in ams-docs.
+# The pipeline will skip doc updates when only these flags change.
+#
+# Use this for: infrastructure toggles, A/B test scaffolding, kill switches,
+# internal tooling flags, and anything with no user-visible behavior.
+
+flags:
+  - name: enable-langfuse-tracing
+    reason: internal observability — no user-visible behavior
+  - name: debug-mode-verbose-logging
+    reason: engineering debug tooling only
+  - name: use-new-db-connection-pool
+    reason: infrastructure change — no behavior difference for users

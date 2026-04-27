@@ -1,0 +1,66 @@
+site_name: AMS+ Documentation
+site_description: Living documentation for AgencyBloc AMS+ — maintained by an AI pipeline with human review.
+site_url: https://agencybloc.github.io/ams-docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - footnotes
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Tutorials:
+      - tutorials/index.md
+  - How-to Guides:
+      - how-to/index.md
+  - Reference:
+      - reference/index.md
+      - Record Types: reference/record-types/index.md
+  - Explanation:
+      - explanation/index.md
+      - Commissions:
+          - Overview: explanation/commissions/overview.md
+          - How It Works: explanation/commissions/how-it-works.md
+          - Reconciliation: explanation/commissions/reconciliation.md
+      - Policies:
+          - Overview: explanation/policies/overview.md
+      - Compliance:
+          - Overview: explanation/compliance/overview.md

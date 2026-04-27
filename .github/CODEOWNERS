@@ -1,0 +1,13 @@
+# CODEOWNERS for ams-docs
+# Each business-area path is owned by the team responsible for reviewing
+# AI-generated documentation in that area.
+
+/docs/explanation/commissions/  @agencybloc/commissions-team
+/docs/explanation/policies/     @agencybloc/policies-team
+/docs/explanation/compliance/   @agencybloc/compliance-team @agencybloc/legal
+
+# Taxonomy and style guide changes require docs team lead review
+/taxonomy.yml                   @agencybloc/docs-team
+/style-guide.md                 @agencybloc/docs-team
+/CLAUDE.md                      @agencybloc/docs-team
+/glossary.md                    @agencybloc/docs-team
